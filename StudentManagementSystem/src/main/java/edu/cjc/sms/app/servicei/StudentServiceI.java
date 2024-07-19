@@ -15,6 +15,10 @@ public interface StudentServiceI
 
 	List<Student> deleteStudentdata(int studentID);
 
+	Student getSingleStudent(int id);
+
+	void updateStudentFees(int id, double ammount);
+
 	
 
 

@@ -213,7 +213,7 @@ name="batchNumber">
  <td>${s.batchNumber}</td>
  <td>
   <div class="btn-group btn-group-sm" role="group" aria-label="...">
-			<button class="btn btn-outline-success">Pay-Fees</button>
+			<button class="btn btn-outline-success"><a href="fee?studentId=${s.studentID}">Pay-Fees</a></button>
 			<button class="btn btn-outline-primary">Shift Batch</button>
 			<button class="btn btn-outline-danger"><a href="remove?studentId=${s.studentID}">REMOVE</a></button>
 </div>

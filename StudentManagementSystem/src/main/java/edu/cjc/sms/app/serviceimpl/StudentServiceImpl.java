@@ -1,6 +1,7 @@
 package edu.cjc.sms.app.serviceimpl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -40,6 +41,25 @@ public class StudentServiceImpl implements StudentServiceI
 		
 		 sr.deleteById(studentID);
 		 return sr.findAll();
+	}
+
+	@Override
+	public Student getSingleStudent(int id) 
+	{
+		Optional<Student> op=sr.findById(id);
+		return op.get();
+	}
+
+	@Override
+	public void updateStudentFees(int id, double ammount) 
+	{
+		Optional<Student> op=sr.findById(id);
+		
+		Student st=op.get();
+		
+		st.setFeesPaid(st.getFeesPaid()+ammount);
+		
+		sr.save(st);
 	}
 
 	
