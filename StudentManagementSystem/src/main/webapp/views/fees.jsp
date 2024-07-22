@@ -50,12 +50,12 @@
 				</table>
 
 				<form action="payfees">
-					<input type="text" name="studentId" value="${s.studentID}"
-						hidden="true">
+					<input type="text" name="studentId" value="${stu.studentID}" hidden="true">
 					<div class="bg-dark p-2  d-flex justify-content-between">
-						<label for="amount" class="text-info">
-						<b>Enter Installment<br> Amount
-						</b></label> <input type="number" name="ammount" max="30000">
+						<label for="ammount" class="text-info">
+						<b>Enter Installment<br> Amount</b>
+						</label>
+						 <input type="text" name="ammount" value="${s.ammount}" max="30000">
 					</div>
 					<div class="d-flex justify-content-center pt-5">
 						<button class="btn btn-success btn-sm ">Add Installment</button>
@@ -64,9 +64,6 @@
 
 			</div>
 		</div>
-
-
-
 	</div>
 </body>
 </html>

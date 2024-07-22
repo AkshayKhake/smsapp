@@ -18,8 +18,7 @@ public class AdminController
 {
 	@Autowired
 	StudentServiceI ssi;
-	int a=10;
-	String name="cjc";
+	
 	@RequestMapping("/")
 	public String preLogin()
 	{
@@ -44,10 +43,10 @@ public class AdminController
 	}
 	
 	@RequestMapping("/enroll_student")
-	public String saveStudentDetails(@ModelAttribute Student s)
+	public String saveStudentDetails(@ModelAttribute Student s,Model m)
 	{
 		ssi.saveData(s);
-		
+
 		return "adminscreen";
 	}
 	
@@ -95,5 +94,22 @@ public class AdminController
 		return "adminscreen";
 	}
 	
+	@RequestMapping("/shift")
+	public String studentBatch(@RequestParam ("studentId") int studentId,Model m)
+	{
+		Student st=ssi.getSingleStudent(studentId);
+		m.addAttribute("stu", st);
+		return "batch";
+		
+	}
+	
+	@RequestMapping("/shiftBatch")
+	public String shiftBatch(@RequestParam("studentId") int id,@RequestParam("batchMode") String bm,@RequestParam("batchNumber") String bn,Model m)
+	{
+		ssi.updateStudentBatch(id,bm,bn);
+		List<Student> l=ssi.showData();
+		m.addAttribute("data", l);
+		return "adminscreen";
+	}
 	
 }

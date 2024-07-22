@@ -19,6 +19,8 @@ public interface StudentServiceI
 
 	void updateStudentFees(int id, double ammount);
 
+	void updateStudentBatch(int id, String bm, String bn);
+
 	
 
 

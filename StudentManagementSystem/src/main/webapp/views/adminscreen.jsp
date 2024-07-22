@@ -60,6 +60,7 @@
   <input type="text" id="firstName" class="form-control form-control-sm"  
 name="studentFullName"/> 
                     <label class="form-label" for="firstName">First Full Name</label> 
+                    
                   </div> 
  
                 </div> 
@@ -169,8 +170,7 @@ checked />
  
  <div class="text-center w-100"> 
      <form action="search" class="w-100"> 
-      <select class="select form-control-sm border border-primary" 
-name="batchNumber"> 
+      <select class="select form-control-sm border border-primary" name="batchNumber"> 
                     <option value="#" slected>Select Batch Number</option> 
                      <option value="REG-177">REG-177</option> 
                     <option value="REG-178">REG-178</option> 
@@ -214,7 +214,7 @@ name="batchNumber">
  <td>
   <div class="btn-group btn-group-sm" role="group" aria-label="...">
 			<button class="btn btn-outline-success"><a href="fee?studentId=${s.studentID}">Pay-Fees</a></button>
-			<button class="btn btn-outline-primary">Shift Batch</button>
+			<button class="btn btn-outline-primary"><a href="shift?studentId=${s.studentID}">Shift Batch</a></button>
 			<button class="btn btn-outline-danger"><a href="remove?studentId=${s.studentID}">REMOVE</a></button>
 </div>
 </td>

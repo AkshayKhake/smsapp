@@ -53,11 +53,24 @@ public class StudentServiceImpl implements StudentServiceI
 	@Override
 	public void updateStudentFees(int id, double ammount) 
 	{
+		Optional<Student> opStu=sr.findById(id);
+		
+		Student st=opStu.get();
+		
+		st.setFeesPaid(st.getFeesPaid()+ammount);
+		
+		sr.save(st);
+	}
+
+	@Override
+	public void updateStudentBatch(int id, String bm, String bn)
+	{
 		Optional<Student> op=sr.findById(id);
 		
 		Student st=op.get();
 		
-		st.setFeesPaid(st.getFeesPaid()+ammount);
+		st.setBatchMode(bm);
+		st.setBatchNumber(bn);
 		
 		sr.save(st);
 	}
